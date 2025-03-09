@@ -17,9 +17,14 @@ router.get("/:id", async (req, res) => {
 
 // Add a new dog
 router.post("/", async (req, res) => {
-  const newDog = new Dog(req.body);
-  await newDog.save();
-  res.json(newDog);
+  try {
+    const newDog = new Dog(req.body);
+    await newDog.save();
+    res.json(newDog);
+  } catch (error) {
+    console.error("Error saving dog:", error);
+    res.status(500).json({ error: "Error saving dog" });
+  }
 });
 
 export default router;
