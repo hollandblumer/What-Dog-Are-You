@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://what-dog-are-you.onrender.com"; // Backend URL
+const API_URL = import.meta.env.VITE_API_URL; // Use environment variable
 
 function App() {
   const [breed, setBreed] = useState("");
