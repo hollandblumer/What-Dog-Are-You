@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://what-dog-are-you.onrender.com"; // Use environment variable
+const API_URL = import.meta.env.VITE_API_URL + "/api/dogs"; // ✅ Uses Vercel environment variable
 
 function App() {
   const [breed, setBreed] = useState("");
