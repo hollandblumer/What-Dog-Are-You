@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/api/dogs"; // Backend URL
+const API_URL = "https://what-dog-are-you.onrender.com"; // Backend URL
 
 function App() {
   const [breed, setBreed] = useState("");
